@@ -26,6 +26,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - id: get_step
         run: |
           echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
@@ -54,6 +55,7 @@ jobs:
       # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
         uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Let's get all the branches.
           ref: my-first-branch # Important, as normally `pull_request` event won't grab other branches.
